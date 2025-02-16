@@ -1,0 +1,1 @@
+# icthio-pygame-template
