@@ -1,6 +1,6 @@
 # Itch.io Pygame Template
 
-![Cover Image](cover.png)
+![Cover Image](src/dummy/cover.png)
 
 A simple Itch.io-compatible Pygame project template for creating and deploying games.
 
