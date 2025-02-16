@@ -51,4 +51,4 @@ install-butler:
 	curl -L -o $(BUTLER_BIN) $(BUTLER_URL)
 	chmod +x $(BUTLER_BIN)
 	echo "Butler successfully installed to $(BUTLER_BIN)"
-	echo "$(INSTALL_DIR)" >> $GITHUB_PATH
+	echo "$(INSTALL_DIR)" >> $(GITHUB_PATH)
