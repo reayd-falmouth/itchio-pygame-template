@@ -7,7 +7,7 @@ ZIP_FILE=web.zip
 .PHONY: build deploy clean
 
 install:
-	@poetry install
+	@poetry install --no-root
 
 # Check-in code after formatting
 checkin: ## Perform a check-in after formatting the code
@@ -31,7 +31,7 @@ deploy: build zip
 	@butler push $(GAME_DIR)/$(ZIP_FILE) $(ITCH_USER)/$(ITCH_GAME):html5 --userversion=$(shell date +%Y%m%d%H%M)
 
 status:
-	@./butler status $(ITCH_USER)/$(ITCH_GAME):html5
+	@butler status $(ITCH_USER)/$(ITCH_GAME):html5
 
 clean:
 	@echo "Cleaning build artifacts..."
