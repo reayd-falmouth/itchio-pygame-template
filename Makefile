@@ -1,4 +1,4 @@
-GAME_DIR := src/dummy
+GAME_DIR := src/dummy/
 ITCH_USER := reayd-falmouth
 ITCH_GAME := dummy
 BUILD_DIR=$(GAME_DIR)/build
