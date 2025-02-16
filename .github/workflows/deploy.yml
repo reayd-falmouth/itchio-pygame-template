@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3.1.0
+
+      - name: Install poetry
+        run: pipx install poetry
+
+      - name: Set up python
+        uses: actions/setup-python@v4.4.0
+        with:
+          python-version-file: .python-version
+          cache: 'poetry'
+
+      - name: Install dependencies
+        run:  poetry install
+
+      - name: Install Butler
+        run:  make install-butler
+
+      - name: Deploy to itch.io
+        run: make deploy
