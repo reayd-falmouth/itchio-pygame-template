@@ -36,19 +36,3 @@ status:
 clean:
 	@echo "Cleaning build artifacts..."
 	@rm -rf $(GAME_DIR)/build $(ZIP_FILE)
-
-
-# Define the target directory within the GitHub Actions runner
-INSTALL_DIR := $(HOME)/.local/bin
-BUTLER_URL := https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
-BUTLER_BIN := $(INSTALL_DIR)/butler
-
-.PHONY: install-butler
-
-install-butler:
-	@echo "Downloading the latest version of Butler..."
-	mkdir -p $(INSTALL_DIR)
-	curl -L -o $(BUTLER_BIN) $(BUTLER_URL)
-	chmod +x $(BUTLER_BIN)
-	echo "Butler successfully installed to $(BUTLER_BIN)"
-	echo "$(INSTALL_DIR)" >> $(GITHUB_PATH)
